@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "5c194690-3452-4b38-98df-ac41405aebbd",
+		"name": "pr7",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34144493"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get_user_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{admin-url}}/users",
+							"host": [
+								"{{admin-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ID\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin-url}}/users",
+							"host": [
+								"{{admin-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user4\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin-url}}/users",
+							"host": [
+								"{{admin-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"ID\": \"3\",\r\n        \"name\": \"user11\",\r\n        \"password\": \"{SHA}cRDtpNCeBiql5KOQsKVyrA0sAiA=\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin-url}}/users",
+							"host": [
+								"{{admin-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ID\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin-url}}/users",
+							"host": [
+								"{{admin-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "try_get_users_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Verify status code 403\", function() {\r",
+									"    pm.response.to.have.status(403)\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-url}}/users",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Material",
+			"item": [
+				{
+					"name": "get_mat_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{user-url}}/mat",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"mat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_mat",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ID\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/mat",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"mat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_mat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Кирпичи\",\r\n    \"discription\": \"Указана цена за кубометр\",\r\n    \"cost\": \"7000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/mat",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"mat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update_mat",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ID\": 6,\r\n    \"title\": \"Кирпичи\",\r\n    \"discription\": \"The price for the material with a volume of one cubic meter is indicated\",\r\n    \"cost\": \"7000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/mat",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"mat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete_mat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ID\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{user-url}}/mat",
+							"host": [
+								"{{user-url}}"
+							],
+							"path": [
+								"mat"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
